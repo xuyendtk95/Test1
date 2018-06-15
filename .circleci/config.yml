@@ -1,8 +1,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/Test1
     docker:
-      - image: debian:stretch
+      - image: circleci/node:8
     steps:
       - checkout
       - run:
