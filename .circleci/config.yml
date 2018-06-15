@@ -9,11 +9,8 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
-          name: Build
-          command: *build-android-app
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
       - run: 
         name: Build android
         command: Date
-      - run: 
-      name: Build2
-      command: *compile-native-libs
