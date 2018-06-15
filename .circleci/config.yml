@@ -11,6 +11,7 @@ jobs:
       - run:
           name: Download Dependencies
           command: circleci build --job android
+          
  android:
     working_directory: ~/Test1/android
     docker:
@@ -21,8 +22,14 @@ jobs:
 
       - attach_workspace:
           at: ~/Test1
-
-      - restore_cache:
-          key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
-
+          
       - run: bundle install
+
+workflows:
+  version: 2
+  node-android-ios:
+    jobs:
+      - node
+      - android:
+          requires:
+            - node
