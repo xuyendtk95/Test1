@@ -9,27 +9,5 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
-          name: Download Dependencies
-          command: circleci build --job android
-          
- android:
-    working_directory: ~/Test1/android
-    docker:
-      - image: circleci/android:api-27-node8-alpha
-    steps:
-      - checkout:
-          path: ~/Test1
-
-      - attach_workspace:
-          at: ~/Test1
-          
-      - run: bundle install
-
-workflows:
-  version: 2
-  node-android-ios:
-    jobs:
-      - node
-      - android:
-          requires:
-            - node
+          name: yarn install
+          command: yarn install
