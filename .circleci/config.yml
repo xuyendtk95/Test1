@@ -11,5 +11,10 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-      - run: *build-android-app
-      - run: *compile-native-libs
+      - run: 
+        name:Build
+        command: *build-android-app
+      
+      - run: 
+      name:Build2
+      command: *compile-native-libs
