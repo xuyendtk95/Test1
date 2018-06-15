@@ -10,11 +10,10 @@ jobs:
           command: echo Hello, world.
       - run:
           name: Print the Current Time
-          command: *build-android-app
+          command: build-android-app
       - run: 
         name: Build
-        command: *build-android-app
-      
+        command: Date
       - run: 
       name: Build2
       command: *compile-native-libs
