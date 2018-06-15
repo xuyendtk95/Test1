@@ -9,10 +9,10 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
-          name: Print the Current Time
-          command: build-android-app
+          name: Build
+          command: *build-android-app
       - run: 
-        name: Build
+        name: Build android
         command: Date
       - run: 
       name: Build2
